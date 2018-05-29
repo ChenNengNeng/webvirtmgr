@@ -101,7 +101,7 @@
 
                                                     <div class="col-sm-6">
                                                         <input type="text" class="form-control" name="name"
-                                                               placeholder="{% trans "Name" %}" maxlength="14" required
+                                                               placeholder="{% trans "Name" %}" maxlength="64" required
                                                                pattern="[a-zA-Z0-9\.\-_]+">
                                                         <input type="hidden" name="vcpu" value="{{ flavor.vcpu }}">
                                                         <input type="hidden" name="memory" value="{{ flavor.memory }}">
@@ -217,15 +217,15 @@
 
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="name" placeholder="{% trans "Name" %}"
-                                   maxlength="14" required pattern="[a-zA-Z0-9\.\-_]+">
+                                   maxlength="64" required pattern="[a-zA-Z0-9\.\-_]+">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">{% trans "VCPU" %}</label>
 
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="1" required
-                                   pattern="[0-9]">
+                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="2" required
+                                   pattern="[0-9]{1,2}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -261,17 +261,6 @@
                                 {% else %}
                                     <option value="">{% trans "None" %}</option>
                                 {% endif %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">{% trans "HDD cache mode" %}</label>
-
-                        <div class="col-sm-6">
-                            <select id="cache_mode" name="cache_mode" class="form-control">
-                                {% for mode, name in cache_modes %}
-                                    <option value="{{ mode }}">{% trans name %}</option>
-                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -336,8 +325,8 @@
                         <label class="col-sm-3 control-label">{% trans "VCPU" %}</label>
 
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="1" required
-                                   pattern="[0-9]">
+                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="2" required
+                                   pattern="[0-9]{1,2}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -384,15 +373,15 @@
 
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="name" placeholder="{% trans "Name" %}"
-                                   maxlength="14" required pattern="[a-zA-Z0-9\.\-_]+">
+                                   maxlength="64" required pattern="[a-zA-Z0-9\.\-_]+">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">{% trans "VCPU" %}</label>
 
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="1" required
-                                   pattern="[0-9]">
+                            <input type="text" class="form-control" name="vcpu" value="1" maxlength="2" required
+                                   pattern="[0-9]{1,2}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -424,17 +413,6 @@
                                 {% else %}
                                     <option value="">{% trans "None" %}</option>
                                 {% endif %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">{% trans "HDD cache mode" %}</label>
-
-                        <div class="col-sm-6">
-                            <select id="cache_mode" name="cache_mode" class="form-control">
-                                {% for mode, name in cache_modes %}
-                                    <option value="{{ mode }}">{% trans name %}</option>
-                                {% endfor %}
                             </select>
                         </div>
                     </div>
